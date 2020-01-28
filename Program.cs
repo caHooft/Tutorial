@@ -4,9 +4,10 @@ namespace FirstConsoleProject
 {
     class MainClass
     {
-        public static void Main(string[] args) // this is a method called "Main". It is called when the program starts.
-
+        public static void Main(string[] args)
         {
+            //EvenNumberGenerator();
+
             int num01 = RandomNumber(1,11);
             int num02 = RandomNumber(1,11);
 
@@ -25,6 +26,16 @@ namespace FirstConsoleProject
             Console.ReadKey();
 
         }
+        public static void EvenNumberGenerator()
+        {
+            for(int i = 0; i <=100; i++)
+            {
+                if(i%2 ==0)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
         public static int RandomNumber(int num01, int num02)
         {
             Random RandomNumberGenerator = new Random();
@@ -37,7 +48,7 @@ namespace FirstConsoleProject
             {
                 Console.WriteLine("Very close");
             }
-            else if (degreeOfWrongness < 10)
+            else if (degreeOfWrongness <= 10)
             {
                 Console.WriteLine("Medium size oof");
             }
