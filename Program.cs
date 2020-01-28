@@ -13,12 +13,13 @@ namespace FirstConsoleProject
             Console.WriteLine("What is " + num01 + " times " + num02 + "?");
             
             int answer = Convert.ToInt32(Console.ReadLine());
+            int degreeOfWrongness = Math.Abs(answer - (num01 * num02));
             
             if (answer == num01 * num02)
                 PositiveResponce();
             
             else
-                NegativeResponce();
+                NegativeResponce(degreeOfWrongness);
             
 
             Console.ReadKey();
@@ -30,21 +31,19 @@ namespace FirstConsoleProject
             return num01 = RandomNumberGenerator.Next(num01, num02);
         }
 
-        public static void NegativeResponce()
+        public static void NegativeResponce(int degreeOfWrongness)
         {
-            int index= RandomNumber(1,4);
-
-            switch (index)
+            if (degreeOfWrongness < 2)
             {
-                case 1:
-                    Console.WriteLine("Incorect");
-                    break;
-                case 2:
-                    Console.WriteLine("Wrong");
-                    break;
-                default:
-                    Console.WriteLine("wrong input detected");
-                    break;
+                Console.WriteLine("Very close");
+            }
+            else if (degreeOfWrongness < 10)
+            {
+                Console.WriteLine("Medium size oof");
+            }
+            else
+            {
+                Console.WriteLine("Big oof");
             }
         }
 
